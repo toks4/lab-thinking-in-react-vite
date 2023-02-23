@@ -1,6 +1,11 @@
 import React from "react";
 import ProductRow from "./ProductRow";
 function ProductTable({ products, searchTerm,isFiltered }) {
+
+let filteredProducts = products.filter((product) => product.inStock);
+  isFiltered ? (products = [...filteredProducts]) : (products = [...products]);
+
+
   return (
     <div>
       <table>
